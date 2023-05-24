@@ -1,0 +1,142 @@
+.sup-slider-wrapper{
+	position: relative;
+	overflow:hidden;
+	margin-bottom:rem-calc(20);
+    &:hover{
+    	.sup-slider-nav{
+    		opacity: 0.8;
+    	}
+    	.sup-next {
+    		right: 10px;
+    	}
+    	.sup-prev {
+    		left: 10px;
+    	}
+    }
+}
+
+.sup-slider{
+	border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sup-slide{
+	position: relative;
+}
+
+.sup-featured-image{
+	transition: 1s;
+	&:hover{
+		-webkit-filter: grayscale(20%);
+	}
+}
+
+.sup-slide-content{
+	position: absolute;
+	right: 0;
+	bottom: 10%;
+	background-image: url('images/skins/slider-db9f0e.png');
+	background-repeat: repeat-y;
+	width: 100%;
+	padding: rem-calc(10);
+	padding-left:rem-calc(20);
+	color: #fff;
+	text-align:left;
+	display:none;
+	a{
+		color: #fff;
+		text-decoration:none;
+		&:hover{
+			color : #fff;
+		}
+	}
+}
+
+.slide-title{
+	margin: 0;
+	text-transform: uppercase;
+	font-size: rem-calc(32);
+}
+
+.slide-excerpt{
+	margin-bottom: 0;
+	font-size: rem-calc(15);
+	a{
+		color: #fff;
+		font-size: inherit;
+		font-style: italic;
+	}
+}
+
+.slick-dots{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sup-cycle-pager{
+
+	width: 100%;
+	text-align: center;
+	margin-top:rem-calc(10);
+
+	.slick-dots{
+		display:inline-block;
+	}
+
+	li{
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		background: #fff;
+		cursor: pointer;
+		text-indent: -9999px;
+		border-radius: 20px;
+		box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+		vertical-align: middle;
+		margin-right: rem-calc(5);
+		transition: 0.5s;
+	}
+	.slick-active{
+		background: #e3b410;
+		cursor: default;
+	}
+}
+
+.sup-slider-nav{
+	position:absolute;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	margin-top: -35px;
+	display: block;
+	cursor: pointer;
+	opacity: 0;
+	z-index: 31; /* z-index of slider cannot be less than 30 */
+	-webkit-transition: all .3s ease;
+	background: rgba( 0, 0 , 0, 0.5 );
+	border-radius: 3px;
+	text-align:center;
+    &:before{
+    	@include fontello();
+		color: #ccc;
+    }
+    &:hover{
+    	opacity: 1;
+    }
+}
+
+.sup-prev{
+	left: 0;
+	&:before{
+		content: '\e80f';
+	}
+}
+
+.sup-next{
+	right: 0;
+	&:before{
+		content: '\e80e';
+	}
+}

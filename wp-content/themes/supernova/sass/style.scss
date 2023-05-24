@@ -1,0 +1,137 @@
+/*!
+Theme Name: Supernova
+Theme URI: http://supernovathemes.com/supernova-theme
+Description: Supernova is a responsive theme that comes in black, orange and blue colors, it has three page templates, with full slider, custom background and custom header. Supernova has been specially designed for blogging websites however due to its clean design and plenty of customization options, it can easily be customized for any purpose.
+Author: Sayed Taqui
+Author URI: http://supernovathemes.com
+Version: 2.1.0
+License: GNU General Public License 2.0(or later)
+License URI: license.txt
+Text Domain: supernova
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, theme-options, translation-ready, threaded-comments
+Supernova WordPress theme, Copyright (C) 2017 Sayed Taqui
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Supernova is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "placeholders";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "fonts";
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+@import "animations";
+
+/*--------------------------------------------------------------
+# Common Classes
+--------------------------------------------------------------*/
+
+@import "common-classes";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "vendor/vendor";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements";
+
+/*--------------------------------------------------------------
+# Wordpress CSS
+--------------------------------------------------------------*/
+@import "wp_css";
+
+/*--------------------------------------------------------------
+# Site Layout
+--------------------------------------------------------------*/
+@import "site_layout";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "menus";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "header";
+
+/*--------------------------------------------------------------
+# Banner
+--------------------------------------------------------------*/
+@import "banner";
+
+/*--------------------------------------------------------------
+# Primary
+--------------------------------------------------------------*/
+@import "primary";
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "posts-and-pages";
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+@import "widgets";
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "comments";
+
+/*--------------------------------------------------------------
+## Foooter
+--------------------------------------------------------------*/
+@import "footer";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "responsive/responsive";

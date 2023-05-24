@@ -1,0 +1,362 @@
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%; /* [5] */
+	-webkit-text-size-adjust: 100%; /* [5] */
+	color: $color__primary; /* [additional] */
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+/**
+ * 1. Fallback for when there is no custom background color defined. [WordPress]
+ * 2. Remove default margin. [normalize.css]
+ * 3. Set the base elements `font-size` to the value of your choosing.
+ * 4. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your projects
+ *    base font size.
+ */
+
+body {
+	background: $color__background-body; /* [1] */
+	background-size: 100% auto;
+	margin: 0; /* [2] */
+	font-family: $font__main;
+
+	@include font-size($line-height: true); /* [3] */ /* [4] */
+
+	// WP Editor
+	&.mce-content-body {
+		font-family: inherit;
+		margin: 15px;
+	}
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+
+/* Default Links */
+a {
+    // Self, Active & Visited
+    & { color: $color__theme; outline: 0; text-decoration: none; }
+
+    transition: 0.5s;
+
+    // Hover
+    &:hover { outline: 0; text-decoration: underline; opacity:0.9; }
+}
+
+/*---------------------------
+		Lists & Tables
+---------------------------*/
+
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+
+h1 {
+	@include font-size($font__size-h1, $line-height: true);
+}
+
+h2 {
+	@include font-size($font__size-h2, $line-height: true);
+}
+
+h3 {
+	@include font-size($font__size-h3, $line-height: true);
+}
+
+h4 {
+	@include font-size($font__size-h4, $line-height: true);
+}
+
+h5 {
+	@include font-size($font__size-h5, $line-height: true);
+}
+
+h6 {
+	@include font-size($font__size-h6, $line-height: true);
+}
+
+h1, h2, h3, h4, h5, h6{
+	@extend %vertical-rhythm;
+	font-family: $font__special;
+	color: $color__heading;
+	a{
+		&:hover{
+			text-decoration: none;
+			color: $color__theme;
+		}
+	}
+}
+
+// Lists
+ul, ol, dd {
+    @extend %vertical-rhythm;
+    margin-left: rem-calc($font__base-line-height);
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
+/**
+ * Crude table styles; tables are very difficult to keep on the baseline.
+ */
+table {
+	border-collapse: collapse;
+    border-spacing: 0;
+    @extend %vertical-rhythm;
+    width: 100%;
+}
+
+th,
+td {
+	border-bottom: 1px solid #E1E1E1;
+    padding: $font__base-line-height / 2;
+	text-align: left;
+
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+.rthd-comment-content {
+	th,
+	td {
+		vertical-align: top;
+
+		&:first-child {
+			width: 18%;
+		}
+	}
+}
+
+/**
+ * Paragraphs
+ */
+
+p {
+    @extend %vertical-rhythm;
+}
+
+
+/**
+ * Not strictly a paragraph, but probably doesnt need its own section.
+ */
+
+address {
+    @extend %vertical-rhythm;
+}
+
+
+/**
+ * CODE
+ */
+
+pre {
+	background: $color__background-pre;
+	border: 1px solid $color__border-light;
+    @extend %vertical-rhythm;
+	max-width: 100%;
+	overflow: auto; /* Contain overflow in all browsers. */
+	padding: 1rem;
+
+	code.bash,
+	& > code {
+		background: transparent;
+		border: 0;
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+
+	code code.bash {
+		font-size: inherit;
+	}
+
+}
+
+code {
+	padding: rem-calc(2 6);
+	margin: rem-calc(0 3);
+	font-size: 80%;
+	//white-space: nowrap;
+	background: $color__background-pre;
+	border: 1px solid $color__border-light;
+	border-radius: 3px;
+}
+
+
+/**
+ * 1. Fix an odd quirk whereby, without this, code blocks are rendered at a
+ *    font-size smaller than 1em.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: $font__code; /* [1] */
+}
+
+
+/**
+ * Set up quote marks on quoting elements.
+ */
+
+q,
+blockquote {
+	border-left: 4px solid #ccc;
+    color: #999;
+    font-style: italic;
+    margin: rem-calc(0 0 $font__base-line-height $font__base-line-height);
+    padding-left: rem-calc(16);
+}
+
+
+/**
+ * HR
+ */
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	box-sizing: content-box; /* Address differences between Firefox and other browsers. Source- normalize.css */
+	height: 1px;
+	@extend %vertical-rhythm;
+}
+
+/**
+ * Address margin not present in IE 8/9 and Safari. [normalize.css]
+ */
+
+figure {
+	margin: rem-calc(16 0);
+	max-width: 100%;
+}
+
+/*---------------------------
+		Buttons
+---------------------------*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, .8);
+	font-size: rem-calc(14);
+	line-height: 1;
+	padding: rem-calc(8);
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-family: $font__main;
+
+	&:hover {
+		border-color: $color__border-button-hover;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+		outline: 0;
+	}
+}
+
+
+/*---------------------------
+		Fields
+---------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	font-family: $font__main;
+	line-height: $font__line-height-body;
+    background: none repeat scroll 0 0 $color__input-background;
+    border: 1px solid $color__border-input;
+    border-radius: 2px;
+    box-shadow: $boxshadow__input;
+    color: $color__text-input;
+    padding: rem-calc(5 8);
+    font-size: rem-calc(15);
+	&:focus {
+		color: $color__text-input-focus;
+	}
+}
+
+textarea {
+	max-width: 100%;
+}
+
+select{
+	color: $color__text-main;
+	font-family: $font__main;
+	font-size: rem-calc(13);
+	line-height: $font__line-height-body;
+}
+
+textarea {
+	width: 100%;
+	line-height: $font__line-height-body;
+	outline: 0;
+	background: #fafafa;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.1) inset;
+}

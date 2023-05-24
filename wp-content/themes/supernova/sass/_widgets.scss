@@ -1,0 +1,262 @@
+.widget {
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li{
+		a{
+			text-decoration: none;
+			color:inherit;
+			&:hover{
+				color: $color__theme;
+			}
+		}
+	}
+}
+
+.tagcloud{
+	a{
+		color: inherit;
+	}
+}
+
+.widget-title{
+	text-transform: uppercase;
+	font-size: rem-calc(28);
+	margin-bottom:rem-calc(10);
+	position: relative;
+    padding-bottom: rem-calc(20);
+    line-height: 1;
+    &:after{
+    	content: '';
+    	width: 100%;
+    	height: 15px;
+    	background: url(images/widget.png);
+    	background-repeat: no-repeat;
+    	position: absolute;
+    	left: 0;
+    	bottom: 0;
+    }
+}
+
+.widget-sidebar{
+	margin: rem_calc(25 0);
+	padding-right: 0;
+	padding-left:0;
+	&:first-child{
+		margin-top:0;
+	}
+}
+
+.widget-title-footer{
+	color: #fff;
+	a{
+		color: #fff;
+	}
+}
+
+.widget-footer{
+	padding-top: $column-gutter;
+	padding-bottom: $column-gutter;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+.widget_calendar{
+	overflow:hidden;
+	font-size: rem-calc(13);
+	a{
+		font-weight: 700;
+	}
+	caption{
+		font-size: rem-calc(16);
+		margin-bottom:rem-calc(15);
+		font-weight: 700;
+		&:before{
+			content: '\e812';
+			@include fontello();
+			margin-right:rem-calc(5);
+		}
+	}
+	#prev{
+		text-align: left;
+	}
+	#next{
+		text-align: right;
+	}
+	td,th{
+		padding: rem-calc(5);
+		text-align: center;
+	}
+	#today{
+		color: $color__theme;
+		font-weight: 700;
+	}
+}
+
+/*==============================
+          Tabber Widget
+===============================*/
+
+.sup_tabber{
+	header{
+		overflow:hidden;
+	}
+	li{
+		&:before{
+			content: "";
+			margin: 0;
+			display: none;
+		}
+	}
+	.sup-tab{
+		display: inline-block;
+		padding: 10px 10px;
+		font-size: rem-calc(13);
+	}
+	.sup-tab.sup-active{
+		background:#fff;
+		color: #000;
+		border-bottom: solid 1px #fff;
+		box-shadow:none;
+	}
+}
+
+.sup-tabber-contents{
+	background: #fff;
+	padding: rem-calc(20 10);
+	min-height: 100px;
+    border: solid 1px #C7C7C7;
+    border-top: solid 1px #D2D2D2;
+    margin-top: -1px;
+    border-radius: 0 5px 0 0;
+    min-height: 50px;
+	li{
+		overflow:hidden;
+		margin-bottom:rem-calc(10);
+		padding-bottom:rem-calc(10);
+		border-bottom: 1px dotted #e6e6e6;
+		&:last-child{
+			border-bottom:none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sup-tabber-content{
+	display:none;
+}
+
+.sup-tabber-content.sup-active{
+	display:block;
+}
+
+.sup-tabber-right{
+	overflow:hidden;
+}
+
+.sup-tabber-thumb{
+	float: left;
+	margin:0;
+	margin-right:rem-calc(10);
+	width: 20%;
+	margin-left:1px;
+	img{
+		@include thumb(2px);
+	}
+}
+
+.sup-tabber-title{
+	margin-bottom:rem-calc(3);
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.sup-tabber-meta{
+	font-size: rem-calc(12);
+	color: $light-gray;
+}
+
+.sup_recentposts{
+	li{
+		overflow:hidden;
+		margin-bottom:rem-calc(10);
+		padding-bottom:rem-calc(10);
+		border-bottom: 1px dotted #e6e6e6;
+		&:last-child{
+			border-bottom:none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.sup-rp-thumb{
+	@extend .sup-tabber-thumb;
+}
+
+.sup-rp-title{
+	margin-bottom:rem-calc(5);
+	text-transform:capitalize;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.sup-rp-meta{
+	font-size: rem-calc(12);
+	color: $light-gray;
+}
+
+.widget_categories{
+	.cat-item{
+		float: left;
+		margin-right: rem-calc(10);
+		margin-bottom:rem-calc(10);
+
+		a{
+			padding: rem-calc(5 10);
+			background-color: #E4E4E4;
+			display: inline-block;
+			font-size: rem-calc(14);
+			color: #444;
+			transition: 0.5s;
+			&:hover{
+				background: $color__theme;
+				color: #fff;
+			}
+		}
+	}
+	.children{
+		margin-bottom: rem-calc(10);
+	}
+}
+
+
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_archive,
+.widget_meta,
+.widget_pages,
+.widget_nav_menu
+{
+	li{
+		&:before{
+			content: "\e80e";
+			@include fontello;
+			font-size: rem-calc(13);
+			margin-right: rem-calc(5);
+			opacity: 0.6;
+		}
+	}
+}

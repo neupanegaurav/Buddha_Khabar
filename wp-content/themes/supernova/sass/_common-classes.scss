@@ -1,0 +1,232 @@
+/*---------------------------
+		Accessiblity
+---------------------------*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $color__background-screen;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: $color__text-screen;
+		display: block;
+		@include font-size(0.875);
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+}
+
+/*---------------------------
+		Alignments
+---------------------------*/
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	@include center-block;
+}
+
+.sup-left{
+	float: left;
+}
+
+.sup-right{
+	float: left;
+}
+
+/*---------------------------
+		Clearing
+---------------------------*/
+
+.comment-content , .clearfix {
+	@extend %clearfix
+}
+
+// Clear Both
+.clear-both {
+	clear: both;
+}
+
+// Clear None
+.clear-none {
+	clear: none;
+}
+
+// Clear Left
+.clear-left {
+	clear: left;
+}
+
+// Clear Right
+.clear-right {
+	clear: right;
+}
+
+
+/*---------------------------
+		Others
+---------------------------*/
+
+.hide {
+	display: none;
+}
+
+.sup-tab{
+	cursor: pointer;
+    display: inline-block;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    color: #7B7B7B;
+    text-shadow: 0 1px 0 #FFFFFF;
+    text-align: center;
+    line-height: 1;
+    -webkit-box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(0,0,0,0.1);
+    background: #F5F5F5;
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0,#EBEBEB),color-stop(1,#FFFFFF));
+    background: -ms-linear-gradient(bottom,#EBEBEB,#FFFFFF);
+    background: -moz-linear-gradient(center bottom,#EBEBEB 0%,#FFFFFF 100%);
+    background: -o-linear-gradient(#FFFFFF,#EBEBEB);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ebebeb', GradientType=0);
+    border-top: solid 1px #CDCDCD;
+    border-left: solid 1px #C2C2C2;
+    border-right: solid 1px #C2C2C2;
+    border-bottom: solid 1px #D2D2D2;
+}
+
+.sup-vertical-center{
+	position: relative;
+	top: 50%;
+	transform : translateY( -50% );
+}
+
+/*==============================
+          Social Icons
+===============================*/
+
+.sup-icon-twitter{
+	&:hover{
+		color:  #00aced;
+	}
+}
+.sup-icon-facebook{
+	&:hover{
+		color:  #3b5998;
+	}
+}
+.sup-icon-google-plus{
+	&:hover{
+		color:  #dd4b39;
+	}
+}
+.sup-icon-pinterest{
+	&:hover{
+		color:  #cb2027;
+	}
+}
+.sup-icon-linkedin{
+	&:hover{
+		color:  #007bb6;
+	}
+}
+.sup-icon-youtube-play{
+	&:hover{
+		color:  #bb0000;
+	}
+}
+.sup-icon-vimeo{
+	&:hover{
+		color:  #aad450;
+	}
+}
+.sup-icon-github{
+	&:hover{
+		color:  #999999;
+	}
+}
+.sup-icon-tumblr{
+	&:hover{
+		color:  #32506d;
+	}
+}
+.sup-icon-rss{
+	&:hover{
+		color: #f26522;
+	}
+}
+
+.sup-icon-skype{
+	&:hover{
+		color: rgb(18, 165, 244);
+	}
+}
+
+.sup-icon-instagram{
+	&:hover{
+		color:  #517fa4;
+	}
+}
+.sup-icon-flickr{
+	&:hover{
+		color:  #ff0084;
+	}
+}
+.sup-icon-dribbble{
+	&:hover{
+		color:  #ea4c89;
+	}
+}
+
+.sup-icon-wordpress{
+	&:hover{
+		color:  #21759b;
+	}
+}
+.sup-icon-stumbleupon{
+	&:hover{
+		color:  #EB4823;
+	}
+}
+.sup-icon-whatsapp{
+	&:hover{
+		color:  #43d854;
+	}
+}
+.sup-icon-blogger{
+	&:hover{
+		color:  #fb8f3d;
+	}
+}
+.sup-icon-soundcloud{
+	&:hover{
+		color:  #ff3a00;
+	}
+}

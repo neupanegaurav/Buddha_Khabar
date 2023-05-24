@@ -1,0 +1,276 @@
+.sup-site-header{
+	padding-top: rem-calc(40);
+	padding-bottom: rem-calc(40);
+}
+
+.sup-site-title{
+	line-height: 1;
+	text-transform: capitalize;
+	margin: 0;
+	margin-bottom:rem-calc(5);
+	font-family: inherit;
+	font-weight: normal;
+	font-size: rem-calc(30);
+	color: #000;
+	a{
+		text-decoration: none;
+	    font-family: inherit;
+	    color: inherit;
+	    &:hover{
+	    	color: inherit;
+	    }
+	}
+}
+
+.sup-site-description{
+	font-style: italic;
+	margin: 0;
+}
+
+.sup-main-search{
+	float: right;
+	margin-top: rem-calc(5);
+	.sup-searchinput{
+		width: 100px;
+		transition: 0.3s;
+		&:focus{
+			width: 180px;
+		}
+	}
+}
+
+.sup-searchsubmit{
+	display:none;
+}
+
+input.sup-searchinput{
+	background: transparent;
+	outline : 0;
+	padding-left: 30px;
+    font-family: sans-serif;
+}
+
+.sup-searchform{
+	position: relative;
+	&:before{
+		content: "";
+		background-image: url(images/sprite.png);
+		background-repeat : no-repeat;
+		background-position: -36px -53px;
+		width: 15px;
+		height: 18px;
+		position: absolute;
+		left: 7px;
+		top: 7px;
+	}
+}
+
+.sup-site-branding{
+	display: inline-block;
+}
+
+.sup-logo-placement-center{
+	text-align: center;
+	.sup-ad-spot-header{
+		margin-top: rem-calc(20);
+	}
+}
+
+.sup-logo-placement-right{
+	text-align: right;
+}
+
+.sup-logo-placement-right.sup-has-header-ad{
+	.sup-site-branding{
+		float: right;
+	}
+	.sup-ad-spot-header{
+		width: 70%;
+		float: left;
+	}
+}
+
+.sup-logo-placement-left.sup-has-header-ad{
+	.sup-site-branding{
+		float: left;
+	}
+	.sup-ad-spot-header{
+		width: 70%;
+		float: right;
+		text-align: right;
+	}
+}
+
+.sup-ad-spot{
+	text-align: center;
+    margin-top: rem-calc(30);
+    margin-bottom: rem-calc(30);
+	.inner-wrapper{
+		display: inline-block;
+	}
+	img{
+		vertical-align: middle;
+	}
+}
+
+
+.sup-mobile-navigation{
+	background: #232323;
+	padding : rem-calc(10);
+	color : #fff;
+    width: 100%!important;
+	a{
+		color: inherit;
+		display: inline-block;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+
+	.sup-icon-menu, .sup-icon-list-bullet{
+	    background-color: #333;
+	    line-height: 1;
+	    padding: rem-calc(8);
+	    transition: 0.5s;
+	    border-radius : rem-calc(5);
+	    cursor: pointer;
+	    display: inline-block;
+	    vertical-align: top;
+	    &:hover{
+	    	background: $color__theme;
+	    }
+		&:before{
+			font-size: rem-calc(18);
+			margin: 0;
+			color: #fff;
+		}
+	}
+}
+
+.sup-mobile-main-nav{
+	float: left;
+}
+
+.sup-mobile-cat-nav{
+	float: left;
+    width: 8rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover, &:focus{
+    	color : $color__theme;
+    }
+}
+
+.sup-mobile-header-nav{
+	float: right;
+}
+
+.sup-mobile-cat-text{
+	margin-right: rem-calc(5);
+	font-family: $font__special;
+	color : inherit;
+	text-transform : uppercase;
+	display:inline-block;
+	margin-top:rem-calc(2);
+}
+
+.sup-mobile-search{
+	float: left;
+	color : inherit;
+	width : calc( 100% - 80px );
+	form{
+		width : 100%;
+	}
+	input{
+		background : #fff;
+		border: none;
+		color : #444;
+		width : 100%;
+		box-sizing: inherit;
+	}
+}
+
+.sup-mobile-has-cat{
+	.sup-mobile-right-part{
+		width: calc( 100% - 8rem );
+		float: right;
+	}
+}
+
+.sup-mobile-right-part{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sup-main-nav-row {
+	margin-bottom: rem-calc(30);
+	margin-top:rem-calc(-20);
+	.row-container {
+		position: relative;
+		&:after{
+			content: '';
+			height: 14px;
+			width: 100%;
+			background-image: url('images/skins/line-db9f0e.png');
+			background-repeat : no-repeat;
+		}
+	}
+	.sup-main-search {
+		position: absolute;
+		top: 0;
+		right: $column-gutter/2;
+	}
+}
+
+.sup-header-search-icons{
+	float: right;
+    margin-right: 10px;
+    margin-top: 9px;
+    display: none;
+    cursor: pointer;
+}
+
+.sup-header-search{
+	position:absolute;
+	bottom: -50px;
+	left:0;
+	right: 0;
+	margin : 0 auto;
+    width: calc( 100% - 1.625rem );
+    clear: both;
+    background: #000;
+    z-index: 1;
+    display: none;
+    border-radius: 0 0 5px 5px;
+	form, input{
+		width:100%;
+	}
+	input[type="search"]{
+		box-sizing: border-box;
+		border:none;
+		height: 50px;
+		font-size: 20px;
+		padding-left: 60px;
+		color: #fff;
+	    letter-spacing: 1px;
+	}
+	.sup-searchform{
+		&:before{
+			@include fontello;
+			content: '\e81d';
+			color: #fff;
+			top: 50%;
+			left: 20px;
+			margin-top: -9px;
+			background-image: none;
+		}
+	}
+}
+
+.sup-top-most{
+	.row-container{
+		position:relative;
+	}
+}
+

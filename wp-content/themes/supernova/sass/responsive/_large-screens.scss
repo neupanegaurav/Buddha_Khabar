@@ -1,0 +1,14 @@
+/**
+ *  Contains Media Queries for sizes between 1440 - 1025
+ */
+
+@media only screen and ( min-width : $tablet_break_point ){
+	.sup-mobile-navigation, #sup-mobile-navigation-sticky-wrapper{
+		display: none;
+	}
+	.widget-sidebar{
+		&:first-child{
+			margin-top:0;
+		}
+	}
+}

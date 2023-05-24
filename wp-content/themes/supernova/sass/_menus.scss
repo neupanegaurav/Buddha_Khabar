@@ -1,0 +1,285 @@
+.sup-mobile-nav{
+	display:none;
+}
+
+/*==============================
+         Header Menu
+===============================*/
+
+.sup-top-most{
+	background: #0A0A0A;
+	text-transform: uppercase;
+	font-family: $font__special;
+    z-index: 34;
+    width: 100%;
+	a{
+		text-decoration: none;
+		display: block;
+		transition: 0.5s;
+	}
+}
+
+.is-sticky{
+	.sup-top-most, .sup-header-search{
+		background: rgba(0, 0, 0, 0.75);
+	}
+}
+
+.sup-right-menu{
+	float: right;
+	position:relative;
+	color: inherit;
+	min-width: 200px;
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	&:hover {
+		.sup-nav-label{
+			background: #fafafa;
+			color: #000;
+			border-radius: 5px 5px 0 0;
+			font-weight: 700;
+		}
+		.sup-menu-container{
+			display: block;
+			padding-bottom:rem-calc(15);
+		}
+	}
+}
+
+.sup-menu-container{
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 2px 1px #CCC;
+    border-radius: 0 0 5px 5px;
+	left: 0;
+	top: 45px;
+    z-index: 35; /*Slide has z-index of 30*/
+    padding-top:rem-calc(5);
+    width: 100%;
+    display: none;
+	a{
+		color: $color__theme;
+	    padding: rem-calc(5 20 5 39);
+	    font-weight: 700;
+	    line-height: 1.5;
+	    &:hover{
+	    	background: #f6f6f6;
+	    }
+	}
+	li{
+		ul{
+			display: none;
+		}
+	}
+}
+
+.sup-nav-label{
+	padding: rem-calc(8);
+}
+
+.sup-icon-menu:before{
+	font-size: rem-calc(20);
+	margin-right:rem-calc(8);
+}
+
+.sup-nav-name{
+	font-size: rem-calc(18);
+	letter-spacing: 1px;
+}
+
+
+/*==============================
+          Main Menu
+===============================*/
+
+.sup-main-nav, .sup-left-menu{
+	max-width: 80%;
+	float: left;
+	a{
+		text-decoration: none;
+		font-family: $font__special;
+		display: block;
+		transition: 0.5s;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li:hover > ul,
+		li.focus > ul {
+			display: block;
+		}
+	}
+
+	li {
+		float: left;
+		position: relative;
+	}
+
+	.sub-menu, .children{
+		position: absolute;
+		top: rem-calc(43);
+		background: #fff;
+		border: 1px solid rgba(0,0,0,0.17);
+		box-shadow: 0 0 5px rgba(0,0,0,0.1);
+		padding: rem-calc(10 0);
+		display: none;
+		z-index: 32;
+		max-width: 202px;
+		&:before {
+			@include triangle-top();
+		}
+		a {
+			font-size: rem-calc(14);
+			&:hover {
+				background: #f6f6f6;
+			}
+		}
+
+		ul {
+			top: 0;
+		}
+
+		li {
+			&:hover > ul,
+			&.focus > ul {
+				left: 100%;
+			}
+		}
+
+		a {
+			width: 200px;
+		}
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	li:hover > a,
+	li:focus > a,
+	li:hover:after,
+	li.current_page_item:after,
+	li.current-menu-item:after,
+	li.current_page_ancestor:after
+	{
+		color : $color__theme;
+	}
+
+	.menu{
+		margin-left: rem-calc(-8);
+		> .menu-item-has-children {
+			margin-right: rem-calc(10);
+		}
+		> ul > .page_item_has_children{
+			margin-right: rem-calc(10);
+		}
+	}
+
+	.menu-item-has-children, .page_item_has_children{
+		.menu-item-has-children:after, .page_item_has_children:after{
+			right: rem-calc(10);
+			top: rem-calc(15);
+			color: #000;
+		}
+	}
+
+	.menu-item-has-children, .page_item_has_children{
+		&:after{
+			content: '\e824';
+			@include fontello;
+			color : inherit;
+			position: absolute;
+			top: rem-calc(18);
+			right: rem-calc(-10);
+		}
+	}
+}
+
+.sup-main-nav{
+	margin-bottom: rem-calc(-10);
+	text-transform: uppercase;
+	color: #000;
+	float: left;
+	a{
+		color: inherit;
+		font-weight: 700;
+		font-size: rem-calc(18);
+		padding: rem-calc(10);
+	}
+}
+
+.sup-left-menu{
+	a{
+		color: inherit;
+		font-weight: 400;
+		padding: rem-calc(10);
+		font-size: rem-calc(16);
+	}
+	.sub-menu, .children {
+		a{
+			color : #000;
+			font-weight: 700;
+			&:hover{
+				color: $color__theme;
+			}
+		}
+	}
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.sup-site-main{
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	& .nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	& .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+#primary-nav-button{
+	display: inline-block;
+}
+
+.mm-menu .mm-search input{
+	border-radius: 30px;
+	text-indent: 10px;
+}
+
+.sup-top-most{
+	color: $color__top_nav;
+}
+
+.mm-menu.mm-current{
+	z-index:999999;
+}

@@ -1,0 +1,70 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+.bypostauthor {
+	display: block;
+}
+
+//Basic Styling
+.comments-area{
+	li.comment{
+		border-bottom: 1px solid $color__border-line;
+		overflow: hidden;
+		margin-bottom: rem-calc(25);
+	}
+	li.comment:last-child{
+		border-bottom: none;
+	}
+
+	ol.children{
+		margin-bottom: 0;
+	}
+
+}
+
+.comment-form-comment{
+	textarea{
+		width: 100%;
+	}
+}
+
+.comment-list{
+	padding: 0;
+	margin: 0;
+	list-style:none;
+}
+
+.comment-body{
+	margin-bottom: rem-calc(20);
+	p{
+		margin-bottom: rem-calc(5);
+	}
+}
+
+.comment-author{
+
+	img{
+		float: left;
+		margin-right: rem-calc(15);
+		@include thumb(2px);
+	}
+	a{
+		color: inherit;
+	}
+	.fn{
+		color: $color__primary;
+		text-transform: capitalize;
+	}
+}
+
+.comment-metadata{
+	color : $light_gray;
+	font-size: rem-calc(12);
+	a{
+		color: inherit;
+	}
+}
+
+.dashicons, .dashicons-before:before{
+	vertical-align:middle;
+}

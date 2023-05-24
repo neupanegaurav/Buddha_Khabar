@@ -1,0 +1,125 @@
+// Rem output with px fallback
+@mixin font-size($font-size: $font__base-font-size, $line-height: false) {
+    font-size: rem-calc($font-size);
+
+    @if $line-height == true {
+        line-height: ceil($font-size / $font__base-line-height) * ($font__base-line-height / $font-size);
+    }
+
+}
+
+@mixin dashicons ( $font-size : 20px ){
+	display: inline-block;
+	width: $font-size;
+	height: $font-size;
+	font-size: $font-size;
+	line-height: 1;
+	font-family: dashicons;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: middle;
+	text-align: center;
+	-webkit-transition: color .1s ease-in 0;
+	transition: color .1s ease-in 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin fontello (){
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1rem;
+	margin-right: .2rem;
+	text-align: center;
+	/* opacity: .8; */
+
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1rem;
+
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2rem;
+
+	/* you can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+@mixin triangle-top(){
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 100%;
+	left: 13px;
+	border-color: #fff transparent;
+	border-style: solid;
+	border-width: 0 8px 8px;
+}
+
+@mixin thumb( $border-width : 5px ) {
+	border: $border-width solid #fff;
+	-webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+//Should be used for single ul > li nav
+@mixin navigation-list($padding, $color, $hover-color) {
+	list-style:none;
+	padding:0;
+	margin:0;
+	> li{
+		float:left;
+	}
+	a{
+		display: inline-block;
+		padding:$padding;
+		color: $color;
+		&:hover{
+			color: $hover-color;
+		}
+	}
+}
